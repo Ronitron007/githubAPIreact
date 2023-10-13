@@ -4,10 +4,11 @@ import { Octokit } from 'octokit';
 import { createContext } from 'react';
 
 export const UserResultsContext = createContext();
+export const UserPATcontext = createContext(null);
 
 export const initialState = {
   users: [],
-  totalUsers: 0,
+  totalUsers: -1,
   loading: true,
   input: '',
   error: false,
@@ -26,7 +27,7 @@ export const reducer = (state, action) => {
     case 'CLEAR_RESULTS':
       return {
         users: [],
-        totalUsers: 0,
+        totalUsers: -1,
         loading: false,
         input: '',
         error: false,
@@ -34,7 +35,7 @@ export const reducer = (state, action) => {
     case 'FETCH_ERROR':
       return {
         users: [],
-        totalUsers: 0,
+        totalUsers: -1,
         loading: false,
         input: '',
         error: action.payload.response.data.message,
@@ -58,9 +59,11 @@ async function searchGithub(stringQuery, authToken) {
   const result1 = axios.request({
     method: 'get',
     url: 'https://api.github.com/search/users',
-    headers: {
-      Authorization: `token ${process.env.REACT_APP_PAT}`,
-    },
+    headers: authToken
+      ? {
+          Authorization: `token ${authToken}`,
+        }
+      : {},
     params: {
       q: stringQuery,
       sort: 'followers',

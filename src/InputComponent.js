@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   border: 1px solid #ccc;
   padding: 5px 20px;
   border-radius: 5px;
-  font-size: 30px;
-  width: 500px;
-  margin: 24px auto;
+  font-size: 24px;
+  width: 800px;
+  margin: 24px;
 `;
 
 const ClearButton = styled.button`
   position: relative;
   top: -3px;
   border: none;
-  left: -60px;
+  left: -80px;
   color: #9a9a9a;
   font-size: 20px;
   font-weight: 400;
