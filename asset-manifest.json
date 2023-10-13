@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/githubAPIreact/static/css/main.52fb18f8.css",
+    "main.js": "/githubAPIreact/static/js/main.c00f914f.js",
+    "static/js/787.469f9f4f.chunk.js": "/githubAPIreact/static/js/787.469f9f4f.chunk.js",
+    "index.html": "/githubAPIreact/index.html",
+    "main.52fb18f8.css.map": "/githubAPIreact/static/css/main.52fb18f8.css.map",
+    "main.c00f914f.js.map": "/githubAPIreact/static/js/main.c00f914f.js.map",
+    "787.469f9f4f.chunk.js.map": "/githubAPIreact/static/js/787.469f9f4f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52fb18f8.css",
+    "static/js/main.c00f914f.js"
+  ]
+}
