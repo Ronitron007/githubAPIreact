@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import _ from 'lodash';
 import './App.css';
+import { useEffect, useState } from 'react';
+import searchGithub from './githubAPI/api';
+import ResultListComponent from './ResultsComponent';
+import UserProvider from './UsersProvider';
 
 function App() {
+  const [userName, setUserName] = useState('');
+  const [apiResult, setApiResult] = useState({ items: [] });
+  const result = _.debounce(
+    () => {
+      searchGithub(userName, setApiResult);
+    },
+    1,
+    { trailing: true }
+  );
+  useEffect(() => {
+    console.log();
+    if (userName) {
+      searchGithub(userName, setApiResult);
+    }
+  }, [userName]);
+  useEffect(() => {
+    console.log(apiResult);
+  }, [apiResult]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserProvider>
+        <ResultListComponent />
+      </UserProvider>
     </div>
   );
 }
