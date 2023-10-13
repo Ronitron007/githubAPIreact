@@ -5,18 +5,18 @@ export const StyledInput = styled.input`
   border: 1px solid #ccc;
   padding: 5px 20px;
   border-radius: 5px;
-  font-size: 24px;
-  width: 800px;
-  margin: 24px;
+  font-size: 1rem;
+  min-width: 56vw;
+  height: min-content;
 `;
 
 const ClearButton = styled.button`
   position: relative;
-  top: -3px;
   border: none;
-  left: -80px;
+  width: min-content;
+  left: -6rem;
   color: #9a9a9a;
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: 400;
   background-color: #ffffff;
   &:hover {
@@ -29,7 +29,7 @@ const InputComponent = ({ userInput, setUserInput }) => {
     setUserInput('');
   };
   return (
-    <div className="mx-12">
+    <div className="mx-4">
       <StyledInput
         type="text"
         value={userInput}

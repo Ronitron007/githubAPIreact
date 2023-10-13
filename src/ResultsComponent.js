@@ -10,7 +10,8 @@ const ErrorSpan = styled.span`
   padding: 20px;
   font-weight: 500;
   border-radius: 8px;
-  width: max-content;
+  width: fit-content;
+  margin: auto;
   font-size: 20px;
   margin-top: 50px;
 `;

@@ -19,7 +19,7 @@ const CustomPAT = ({ PAT, setPAT }) => {
               github API requests.
             </h2>
           ) : null}
-          <div className="flex flex-row mx-auto">
+          <div className="flex flex-row mx-auto my-6">
             <StyledInput
               placeholder="Token resembles  ghp_w***************"
               value={input}
@@ -29,7 +29,7 @@ const CustomPAT = ({ PAT, setPAT }) => {
             />
             <button
               disabled={!input}
-              className="bg-blue-500 my-10 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2 w-50"
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded mx-2 w-50"
               onClick={handleSubmit}
             >
               Submit
