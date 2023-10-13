@@ -18,7 +18,7 @@ const ResultsComponent = () => {
   const { users, loading, totalUsers, input, error } =
     useContext(UserResultsContext);
   return (
-    <div className="flex flex-row w-100 justify-center py-1200">
+    <div className="flex flex-col w-50 justify-center">
       {totalUsers ? <span>Total Results: {totalUsers}</span> : null}
       {error ? <ErrorSpan>{error}</ErrorSpan> : null}
       {_.isEmpty(users)
